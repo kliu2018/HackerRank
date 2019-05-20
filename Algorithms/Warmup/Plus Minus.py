@@ -1,32 +1,30 @@
-#!/bin/python3
-
 import math
 import os
 import random
 import re
 import sys
 
-# Complete the compareTriplets function below.
-def compareTriplets(a, b):
-    sa=0
-    sb=0
-    for i in range(len(a)):
-        if a[i] > b[i]:
-            sa+=1
-        elif a[i] <b[i]:
-            sb+=1
-    return sa, sb
+# Complete the plusMinus function below.
+def plusMinus(arr):
+    p=0
+    n=0
+    z=0
+    for i in range(len(arr)):
+        if arr[i] >0:
+            p+=1
+        if arr[i]<0:
+            n+=1
+        if arr[i] ==0:
+            z+=1
+    print(p/len(arr))
+    print(n/len(arr))
+    print(z/len(arr))
+
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    n = int(input())
 
-    a = list(map(int, input().rstrip().split()))
+    arr = list(map(int, input().rstrip().split()))
 
-    b = list(map(int, input().rstrip().split()))
+    plusMinus(arr)
 
-    result = compareTriplets(a, b)
-
-    fptr.write(' '.join(map(str, result)))
-    fptr.write('\n')
-
-    fptr.close()
