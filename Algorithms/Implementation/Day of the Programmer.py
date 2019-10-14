@@ -14,7 +14,7 @@ def dayOfProgrammer(year):
         date = '26.09.1918'
     elif year<=1917 and year%4==0:
         date = leap_date +str(year)
-    elif year>=1919 and (year%4==0 and year%100!=0):
+    elif year>=1919 and (year%4==0 and (year%100!=0 or year%400==0)):
         date = leap_date +str(year)
     else:
         date = other_date + str(year)
